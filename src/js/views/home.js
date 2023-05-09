@@ -9,15 +9,12 @@ import { Navbar } from "../component/navbar.js"
 
 export const Home = () => {
 	return (
-	<div className="text-center mt-5">
-
-		<Navbar/>
+	<div className="text-center mt-1">
+	
 		<Character/>
 		
 		
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
+		
 	</div>
 	);
 }

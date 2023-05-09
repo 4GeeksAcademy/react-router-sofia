@@ -10,7 +10,8 @@ export const Demo = () => {
 
 	return (
 		<div className="container">
-			<ul className="list-group">
+			<p>hola mundo</p>
+			{/* <ul className="list-group">
 				{store.demo.map((item, index) => {
 					return (
 						<li
@@ -37,7 +38,7 @@ export const Demo = () => {
 			<br />
 			<Link to="/home">
 				<button className="btn btn-primary">Back home</button>
-			</Link>
+			</Link> */}
 		</div>
 	);
 };

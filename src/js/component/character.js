@@ -12,7 +12,10 @@ export const Character = () => {
    <div className="card-body">
      <h5 className="card-title">Card title</h5>
      <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" className="btn btn-primary">Go somewhere</a>
+     {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
+     <Link to="/demo"> 
+				<button className="btn btn-primary">link informacion de personaje</button>
+			</Link>
    </div>
  </div>
 
