@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";//importamos el hooks useParams
 import { Context } from "../store/appContext";
+
+
+//aqui iria el detalle de cada card 
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);

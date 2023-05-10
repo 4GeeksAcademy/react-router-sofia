@@ -10,7 +10,9 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Cards } from "./component/cards";
+//import  { Cards }  from "./component/cards.js";
+
+
 
 // este componente Layout se encargará de enrutar las URL con todas las vistas de mi aplicación
 const Layout = () => {
