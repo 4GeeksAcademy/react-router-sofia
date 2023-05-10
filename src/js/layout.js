@@ -10,12 +10,12 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Character } from "./component/character";
+import { Cards } from "./component/cards";
 
-//create your first component
+// este componente Layout se encargará de enrutar las URL con todas las vistas de mi aplicación
 const Layout = () => {
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+	//el nombre base(basename) se usa cuando su proyecto se publica en un subdirectorio y no en la raíz del dominio
+	// puede establecer el nombre base en el archivo .env ubicado en la raíz de este proyecto, por ejemplo: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
 
 	return (
@@ -26,14 +26,16 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar/>
 					
-				
-					<Routes>
+				{/* en routes se colocan todas las rutas que queremos envolcer (route), routes y route tenemos que importarlo al principio del documento */}
+					<Routes> 
 						{/* se coloca la ruta en path="/" en el cual cuando entremos en esa ruta especificamente nos lleva al componente que deseamos, nombrandolo en 
 						( element={<Home /> podria ser cualquier otro componente}) Le dice a React que muestre la única <Route> que coincide con la URL mostrada. */}
 						<Route path="/" element={<Home />} />  
 						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} /> 
+						<Route path="/single/:theid" element={<Single />} />  {/* aqui iria la ruta dinamica ya que  tiene un añadido que dice: oye aunque las paginas sean iguales, en cada una quiero
+																				 un tipo de datos diferentes. muy importante añadir los : para que react diga vale esto no es una palabra es una "caracteristica" */}
 						<Route path="*" element={<h1>Not found!</h1>} /> 
+
 					</Routes>
 					<Footer />
 				</ScrollToTop>
