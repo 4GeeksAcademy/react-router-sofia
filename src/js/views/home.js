@@ -13,7 +13,7 @@ export const Home = () => {
 	return (
 		<div className="container">
 			{/* //character */}
-		<h1 className="display-4 py-1 fw-bolder text-center">Characters</h1>
+		<h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Characters</h1>
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  
 		  <div className="cards d-flex  ">
@@ -23,7 +23,7 @@ export const Home = () => {
 		  </div>
 		</div>
 			{/* planets */}
-	  <h1 className="display-4 py-1 fw-bolder text-center">Planets</h1>
+	  {/* <h1 className="display-4 py-1 fw-bolder text-center">Planets</h1>
       <div className="row d-flex flex-column wrapScroll mb-3 ">
         
         <div className="cards d-flex ">
@@ -33,7 +33,7 @@ export const Home = () => {
             ))}
           
         </div>
-      </div>
+      </div> */}
 	</div>
 	
 	);

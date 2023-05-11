@@ -12,38 +12,42 @@ import { Context } from "../store/appContext";
 export const Cards = (props) => {
   const { name } = useParams();
   const { store, actions }= useContext(Context);
-  const [single,setSingle] = useState({});
+  const [single,setSingle] = useState({}); //el hook de estado "useState" para almacenar un objeto "single"(descripcion particular de cada card)
   
 
-  useEffect(() => {
+  useEffect(() => { // hook de efecto "useEffect" para actualizar el estado del objeto "single" cuando el valor de "name" cambia.
     if (name) {
-      setSingle(props.object.filter((object) => object.name === name));
-    }
+      setSingle(props.object.filter((object) => object.name === name));//sa el método "filter" de JavaScript para encontrar el objeto  en la matriz "props.object" que
+                                                                      // tiene el nombre igual al valor de "name" (obtenido a traves del hook "useParams").
+                                                                      //EL METODO "FILTER" devuelve una nueva matriz con todos los elementos que cumplen la condicion,
+                                                                      //especificada en una funcion de llamada ("object.name === name")
+    }// el resultado de filter se asigna al estado "single" el cual almacena un objeto que coincide con la url para informacion detallada sobre el objeto en una pagina separada
   });
 
-  let type = "";
-  switch (props.type) {
-    case "personas":
-      type = "characters";
+  let type = ""; //inicializa en cadena vacia
+  switch (props.type) { //switch para comprar el valor de la propiedad "type" del objeto"props" con una seria de casos (case)
+    case "personas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
+      type = "characters";//de lo contrario seguira siendo una cadena vacia
 
-   return ( 
-   <div className="card" style={{width: "18rem"}}>
-   <img src=
-   { "https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg" }
+   return (  // characters
+   <><div className="card" style={{ width: "18rem" }}>
+       <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"}
 
-       className="card-img-top"
-      style={{height:"100%", width: "100%"}}
-      alt="..."/>
+         className="card-img-top"
+         style={{ height: "100%", width: "100%" }}
+         alt="..." />
 
-   <div className="card-body">
-     <h5 className="card-title">bgnbhrytjnhry </h5>
-     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
-     <Link to="/single"> 
-     <button className="btn btn-primary">link informacion de personaje</button> {/* < // ruta+props.id */}
-			</Link>
-   </div>
- </div>
+       <div className="card-body">
+         <h5 className="card-title">{props.object.name} </h5>
+         <p className="card-text">Gender: {props.object.gender}</p>
+         <p className="card-text">Hair color: {props.object.hair_color}</p>
+         <p className="card-text">Eye color: {props.object.eye_color}</p>
+         {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
+         <Link to="/single">
+           <button className="btn btn-primary" style={{background:"#575957",}}>link informacion de personaje</button> {/* < // ruta+props.id */}
+         </Link>
+       </div>
+     </div> </>
 
     )
  }
