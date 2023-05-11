@@ -1,7 +1,10 @@
 import React,{ useEffect,useState,useContext } from "react";
 import { BrowserRouter, Link, Route, Routes, useParams } from "react-router-dom";
-//import "../../styles/demo.css";
+import "../../styles/demo.css";
 import { Context } from "../store/appContext"; 
+import { Single } from "../views/single";
+import { object } from "prop-types";
+
 //este archivo es appContext. aqui tenemmos el useEffect de los fetch
 //import { object } from "prop-types";
 
@@ -30,22 +33,26 @@ export const Cards = (props) => {
       type = "characters";//de lo contrario seguira siendo una cadena vacia
 
    return (  // characters
-   <><div className="card" style={{ width: "18rem" }}>
+   <><div className="card" style={{ width: "18rem",borderRadius:"20px" }}>
        <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"}
 
          className="card-img-top"
-         style={{ height: "100%", width: "100%" }}
+         style={{ height: "100%", width: "100%",borderRadius:"20px" }}
          alt="..." />
 
-       <div className="card-body">
+       <div className="card-body" style={{fontSize:"12px"}}>
          <h5 className="card-title">{props.object.name} </h5>
-         <p className="card-text">Gender: {props.object.gender}</p>
-         <p className="card-text">Hair color: {props.object.hair_color}</p>
-         <p className="card-text">Eye color: {props.object.eye_color}</p>
+         <p className="card-text"><b>Gender:</b> {props.object.gender}</p>
+         <p className="card-text"><b>Hair color:</b> {props.object.hair_color}</p>
+         <p className="card-text"><b>Eye color:</b> {props.object.eye_color}</p>
+         <p className="card-text"><b>Height</b> {props.object.height}</p>
+
          {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
-         <Link to="/single">
-           <button className="btn btn-primary" style={{background:"#575957",}}>link informacion de personaje</button> {/* < // ruta+props.id */}
+         <Link to={`/single/${props.id}`}>     
+           <button className="btn btn-primary"
+           style={{background:"#575957"}}>link informacion de personaje</button> 
          </Link>
+         
        </div>
      </div> </>
 

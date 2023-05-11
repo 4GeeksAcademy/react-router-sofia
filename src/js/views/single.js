@@ -9,9 +9,12 @@ import { Context } from "../store/appContext";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	useEffect (()=>{
+		actions.fetchCharacter(params.theid)
+	},[])
+	
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
 
 			<hr className="my-4" />
 
@@ -25,5 +28,5 @@ export const Single = props => {
 };
 
 Single.propTypes = {
-	match: PropTypes.object
+	match: PropTypes.object //object son los elementos que hay dentro del array de fetch
 };

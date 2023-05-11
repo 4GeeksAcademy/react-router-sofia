@@ -34,7 +34,7 @@ const Layout = () => {
 						( element={<Home /> podria ser cualquier otro componente}) Le dice a React que muestre la única <Route> que coincide con la URL mostrada. */}
 						<Route path="/" element={<Home />} />  
 						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:name" element={<Single />} />  {/* aqui iria la ruta dinamica ya que  tiene un añadido que dice: oye aunque las paginas sean iguales, en cada una quiero
+						<Route path="/single/:theid" element={<Single />} />  {/* aqui iria la ruta dinamica ya que  tiene un añadido que dice: oye aunque las paginas sean iguales, en cada una quiero
 																				 un tipo de datos diferentes. muy importante añadir los : para que react diga vale esto no es una palabra es una "caracteristica" */}
 						<Route path="*" element={<h1>Not found!</h1>} /> 
 

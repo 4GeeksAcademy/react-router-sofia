@@ -4,6 +4,7 @@ const getState = ({ getStore,getActions, setStore }) => {
 			//aqui debo declarar un array de favoritos que se puedan agregar cuando el usuario lo desee,al igual que array de planets y character.
 
 			characters: [],
+			character:{},
 			planets: [],
 			vehicles: [],
 
@@ -25,6 +26,15 @@ const getState = ({ getStore,getActions, setStore }) => {
 				fetch("https://swapi.dev/api/people")
 				.then(response => response.json()) // te trae un respuestas y la convierte en json
 				.then(data => setStore({characters: data.results})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
+																  //esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}]    
+				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
+
+			},
+
+			fetchCharacter: (id) => {
+				fetch(`https://swapi.dev/api/people/${id}`)
+				.then(response => response.json()) // te trae un respuestas y la convierte en json
+				.then(data =>setStore({character: data})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
 																  //esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}]    
 				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 
