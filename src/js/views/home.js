@@ -20,20 +20,20 @@ export const Home = () => {
 			  return (<div key={index} className="col-3"> <Cards object={people} type="personas" id={index + 1} url={`/single/${people.id}`}/></div>)
 			})}
 		  </div>
-		</div>
+		</div> 
 		
-			{/* planets */}
-	  {/* <h1 className="display-4 py-1 fw-bolder text-center">Planets</h1>
-      <div className="row d-flex flex-column wrapScroll mb-3 ">
-        
-        <div className="cards d-flex ">
-          
-            {store.planets.map((planets, index) => (
-              <div key={index } className="col-3"> <Cards object={planets} type="planetas" id={index + 1}/> </div>
-            ))}
-          
-        </div>
-      </div> */}
+			{/* Planets */}
+
+			{/* <h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Planets</h1>
+		<div className="row d-flex flex-column wrapScroll mb-3  ">
+		  <div className="cards d-flex  ">
+			{store.planets.map((planets, index) => { //mapeamos a planets dentro de cards
+			  return (<div key={index} className="col-3"> <Cards object={planets} type="planetas" id={index + 1} url={`/single/${planets.id}`}/></div>)
+			})}
+		  </div>
+		</div> 
+		 */}
+			
 	</div>
 	
 	);

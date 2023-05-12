@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";//importamos el hooks useParams
 import { Context } from "../store/appContext";
-//import { clean } from "gh-pages";
 
 
 //aqui iria el detalle de cada card 
@@ -11,31 +10,34 @@ export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect ( ()=>{
-		// clean.store //aqui debo colocar un clean para que limpie el estado anterior
 		actions.fetchCharacter(params.theid)
 		console.log(store)
 	},[])
 	
 	return (
-<div className="jumbotron" style={{padding:"100px"}}>
+<div className="jumbotron" style={{padding:"20px",display: "flex",justifyContent:"space-between"}}>
 
-  <span style={{color:"white",textAlign:"right"}}> 
-	
-	<h2>{store.character.name}</h2>
-	<br/>
-	<p>	{store.character.birth_year}</p>
-	<br/>
-	<p>	{store.character.hair_color}</p>
+  <div>
+  <img src={"https://starwars-visualguide.com/assets/img/characters/" + params.theid + ".jpg"}
 
-  </span> 
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
+         className="card"
+         style={{ height: "500px", width: "400px",borderRadius:"20px" }}
+         alt="..." />
+		 <Link to="/">
+				<span className="btn btn-primary btn-lg" href="#" role="button" style={{marginTop:"20px",background:"#434943",border:"0px"}}>
 					Back home
 				</span>
 			</Link>
+  </div>
+		 <span style={{color:"white"}}> 
+	<h2>Name: {store.character.name}</h2>
+	<br/>
+	<h4>Birthday: {store.character.birth_year}</h4>
+	<br/>
+	<h4>Hair color: {store.character.hair_color}</h4>
+		</span>
 </div>
+
 	);
 };
 

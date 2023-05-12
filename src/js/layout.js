@@ -35,7 +35,7 @@ const Layout = () => {
 						<Route path="/" element={<Home />} />  
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
-						<Route exact path="/single/:theid" component={Single} />
+						
 						  {/* aqui iria la ruta dinamica ya que  tiene un añadido que dice: oye aunque las paginas sean iguales, en cada una quiero
 																				 un tipo de datos diferentes. muy importante añadir los : para que react diga vale esto no es una palabra es una "caracteristica" */}
 						<Route path="*" element={<h1>Not found!</h1>} /> 

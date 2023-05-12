@@ -35,9 +35,9 @@ export const Cards = (props) => {
    return (  // characters
 
     
-   <> <div className="container">
+   
       <div className="card" style={{ width: "18rem",borderRadius:"20px" }}>
-       <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"}
+       <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"} 
 
          className="card-img-top"
          style={{ height: "100%", width: "100%",borderRadius:"20px" }}
@@ -49,19 +49,47 @@ export const Cards = (props) => {
          <p className="card-text"><b>Hair color:</b> {props.object.hair_color}</p>
          <p className="card-text"><b>Eye color:</b> {props.object.eye_color}</p>
          <p className="card-text"><b>Height</b> {props.object.height}</p>
-
-
          {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
         <Link to={`/single/${props.id}`}>     
            <button className="btn btn-primary"
-           style={{background:"#575957"}}>link informacion de personaje</button> 
+           style={{background:"#575957"}}>Information</button> 
          </Link> 
          
        </div>
-     </div> 
-     </div></>
-
-    )
+     </div>
+   )
+   
+  
+    //PLANETS CARDS
+  //   case "planetas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
+  //     type = "planets"; //de lo contrario seguira siendo una cadena vacia
+  //     return(
+  //     <div className="card d-inline-block rounded" style={{ width: "14rem" }}>
+  //     <div className="face front">
+  //     <img
+  //       src={
+  //         <img src={
+  //          "https://starwars-visualguide.com/assets/img/planets/" +
+  //               props.id +
+  //               ".jpg"}
+  //       className="card-img-top"
+  //        style={{ height: "100%", width: "100%",borderRadius:"20px" }}
+  //        alt="..." />}/>
+         
+  //        <div className="card-body" style={{fontSize:"12px"}}>
+  //        <h5 className="card-title">{props.object.name} </h5>
+  //        <p className="card-text"><b>Climate:</b> {props.object.climate}</p>
+  //        <p className="card-text"><b>Population:</b> {props.object.population}</p>
+  //        {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
+  //       <Link to={`/single/${props.id}`}>     
+  //          <button className="btn btn-primary"
+  //          style={{background:"#575957"}}>Information</button> 
+  //        </Link> 
+         
+  //      </div>
+  //    </div> 
+  //    </div> 
+  //  )
  }
 }
 

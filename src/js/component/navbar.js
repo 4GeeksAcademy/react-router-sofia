@@ -15,7 +15,7 @@ export const Navbar = () => {
 			</Link>
 			<div className="ml-auto">
 				<Link to="/demo">
-					<button className="btn btn-primary" style={{marginRight:"50px"}}> Fovorites</button>
+					<button className="btn btn-primary" style={{marginRight:"50px",background:"#434943",border:"0px"}}> Fovorites</button>
 				</Link>
 
 					{/* <Link to="/character">
