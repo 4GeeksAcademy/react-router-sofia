@@ -31,6 +31,8 @@ const getState = ({ getStore,getActions, setStore }) => {
 
 			},
           // fetch de personajes de manera individual 
+			
+
 			fetchCharacter: (id) => {
 				fetch(`https://swapi.dev/api/people/${id}`)
 				.then(response => response.json()) // te trae un respuestas y la convierte en json

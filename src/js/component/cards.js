@@ -28,7 +28,7 @@ export const Cards = (props) => {
   });
 
   let type = ""; //inicializa en cadena vacia
-  switch (props.type) { //switch para comprar el valor de la propiedad "type" del objeto"props" con una seria de casos (case)
+  switch (props.type) { //switch para comparar el valor de la propiedad "type" del objeto"props" con una seria de casos (case)
     case "personas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
       type = "characters";//de lo contrario seguira siendo una cadena vacia
 
