@@ -33,7 +33,10 @@ export const Cards = (props) => {
       type = "characters";//de lo contrario seguira siendo una cadena vacia
 
    return (  // characters
-   <><div className="card" style={{ width: "18rem",borderRadius:"20px" }}>
+
+    
+   <> <div className="container">
+      <div className="card" style={{ width: "18rem",borderRadius:"20px" }}>
        <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"}
 
          className="card-img-top"
@@ -47,14 +50,16 @@ export const Cards = (props) => {
          <p className="card-text"><b>Eye color:</b> {props.object.eye_color}</p>
          <p className="card-text"><b>Height</b> {props.object.height}</p>
 
+
          {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
-         <Link to={`/single/${props.id}`}>     
+        <Link to={`/single/${props.id}`}>     
            <button className="btn btn-primary"
            style={{background:"#575957"}}>link informacion de personaje</button> 
-         </Link>
+         </Link> 
          
        </div>
-     </div> </>
+     </div> 
+     </div></>
 
     )
  }

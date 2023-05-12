@@ -16,8 +16,8 @@ export const Home = () => {
 		<h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Characters</h1>
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  <div className="cards d-flex  ">
-			{store.characters.map((people, index) => {
-			  return (<div key={index} className="col-3"> <Cards object={people} type="personas" id={index + 1}/></div>)
+			{store.characters.map((people, index) => { //mapeamos a characters dentro de cards
+			  return (<div key={index} className="col-3"> <Cards object={people} type="personas" id={index + 1} url={`/single/${people.id}`}/></div>)
 			})}
 		  </div>
 		</div>

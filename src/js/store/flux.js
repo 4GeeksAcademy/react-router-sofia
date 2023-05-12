@@ -21,7 +21,7 @@ const getState = ({ getStore,getActions, setStore }) => {
 						.catch(err => console.log("request failed", err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 				},
 				
-						//personajes / characters
+		  //personajes / characters
 			fetchCharacters: () => {
 				fetch("https://swapi.dev/api/people")
 				.then(response => response.json()) // te trae un respuestas y la convierte en json
@@ -30,7 +30,7 @@ const getState = ({ getStore,getActions, setStore }) => {
 				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 
 			},
-
+          // fetch de personajes de manera individual 
 			fetchCharacter: (id) => {
 				fetch(`https://swapi.dev/api/people/${id}`)
 				.then(response => response.json()) // te trae un respuestas y la convierte en json

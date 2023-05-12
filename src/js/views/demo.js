@@ -4,14 +4,11 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
-//demo es donde colocaremos la informacion al detalle de cada planeta o personaje cuando le dan al boton de informacion de card.
 
-export const Demo = () => {//modificar de cero, se ha borrado en flux la parte de "demo" porque no la usaremos 
+export const Demo = () => { //modificar de cero, se ha borrado en flux la parte de "demo" porque no la usaremos 
 	const { store, actions } = useContext(Context);
 
 	return (
-
-	
 
 		<div className="container">
 			<p>DEMO</p>

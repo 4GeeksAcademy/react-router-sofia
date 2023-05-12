@@ -9,13 +9,17 @@ import { Context } from "../store/appContext";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	useEffect (()=>{
-		actions.fetchCharacter(params.theid)
+	useEffect ( ()=>{
+		console.log(params)
+	    actions.fetchCharacter(params.theid)
+		console.log(store)
 	},[])
 	
 	return (
 		<div className="jumbotron">
-
+  <span>
+	{store.character.name}
+  </span>
 			<hr className="my-4" />
 
 			<Link to="/">
