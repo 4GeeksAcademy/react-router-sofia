@@ -13,26 +13,48 @@ export const Navbar = () => {
 				</span>
 
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary" style={{marginRight:"50px",background:"#434943",border:"0px"}}> Fovorites</button>
-				</Link>
+			<div className="dropstart me-5">
+        <button
+          className="btn btn-primary position-relative  glow-on-hover "
+          type="button"
+          id="favoritesButton"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          data-bs-auto-close="outside"
+        >
+          Mis favoritos
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {(store.favorites.length)}
+    <span class="visually-hidden">unread messages</span>
+  </span>
+		  
+        </button>
+        <ul
+          className="dropdown-menu text-light bg-dark"
+          aria-labelledby="dropdownMenuButton1"
+        >
+          {store.favorites.map((favorite, index) => {
+            return (
+              <li className="d-flex navegacion">
+                
+                <a className="dropdown-item text-light bg-darkp-2 " href="#">
+                  {favorite}
+                </a>
+                {/* <span
+                  className="fa-solid fa-x"
+                  onClick={() => {
+                    actions.deleteFavorite(index);
+                  }}
+                >
+                  <i class="bi bi-trash me-4 text-danger boton"></i>
+                </span>
+                 */}
+              </li>
+            );
+          })}
+        </ul>
+      </div>			
 
-					{/* <Link to="/character">
-  <button className="btn btn-primary">Characters</button>
-</Link> */}
-
-					{/* <li className="nav-item dropdown">
-						<a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"  aria-expanded="false" style={{color:"white"}}>Favorites</a>
-						<ul className="dropdown-menu">
-							<li><a className="dropdown-item" href="#">Action</a></li>
-							<li><a className="dropdown-item" href="#">Another action</a></li>
-							<li><a className="dropdown-item" href="#">Something else here</a></li>
-							<li><a className="dropdown-item" href="#">Separated link</a></li>
-						</ul>
-					</li> */}
-					
-			</div>
 		</nav>
 	);
 };

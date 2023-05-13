@@ -41,9 +41,9 @@ export const Cards = (props) => {
 
          className="card-img-top"
          style={{ height: "100%", width: "100%",borderRadius:"20px" }}
-         alt="..." />
+         alt="Card image cap" />
 
-       <div className="card-body" style={{fontSize:"12px"}}>
+       <div className="card-body" style={{fontSize:"12px",fontFamily:"fantasy"}}>
          <h5 className="card-title">{props.object.name} </h5>
          <p className="card-text"><b>Gender:</b> {props.object.gender}</p>
          <p className="card-text"><b>Hair color:</b> {props.object.hair_color}</p>
@@ -54,6 +54,17 @@ export const Cards = (props) => {
            <button className="btn btn-primary"
            style={{background:"#575957"}}>Information</button> 
          </Link> 
+{/* //BOTON DE FAVORIOTS */}
+         <button
+                  type="button"
+                  style={{height:"37px", marginLeft:"40%"}}
+                  className="btn btn-sm btn-outline-danger  "
+                  onClick={() => {
+                    actions.addToFavorites(props.object.name);
+                  }}
+                >
+                   🖤  
+                </button>
          
        </div>
      </div>
