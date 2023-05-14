@@ -25,6 +25,8 @@ export const Cards = (props) => {
                                                                       //EL METODO "FILTER" devuelve una nueva matriz con todos los elementos que cumplen la condicion,
                                                                       //especificada en una funcion de llamada ("object.name === name")
     }// el resultado de filter se asigna al estado "single" el cual almacena un objeto que coincide con la url para informacion detallada sobre el objeto en una pagina separada
+ 
+    
   });
 
   let type = ""; //inicializa en cadena vacia
@@ -49,6 +51,7 @@ export const Cards = (props) => {
          <p className="card-text"><b>Hair color:</b> {props.object.hair_color}</p>
          <p className="card-text"><b>Eye color:</b> {props.object.eye_color}</p>
          <p className="card-text"><b>Height</b> {props.object.height}</p>
+         
          {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
         <Link to={`/single/${props.id}`}>     
            <button className="btn btn-primary"
@@ -72,35 +75,34 @@ export const Cards = (props) => {
    
   
     //PLANETS CARDS
-  //   case "planetas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
-  //     type = "planets"; //de lo contrario seguira siendo una cadena vacia
-  //     return(
-  //     <div className="card d-inline-block rounded" style={{ width: "14rem" }}>
-  //     <div className="face front">
-  //     <img
-  //       src={
-  //         <img src={
-  //          "https://starwars-visualguide.com/assets/img/planets/" +
-  //               props.id +
-  //               ".jpg"}
-  //       className="card-img-top"
-  //        style={{ height: "100%", width: "100%",borderRadius:"20px" }}
-  //        alt="..." />}/>
+      case "planetas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
+         type = "planets"; //de lo contrario seguira siendo una cadena vacia
+       return(
+        <div className="card d-inline-block rounded" style={{ width: "14rem" }}>
+        <div className="face front">
+        
+        <img src={"https://starwars-visualguide.com/assets/img/planets/2/" + props.id + ".jpg"} 
+
+className="card-img-top"
+style={{ height: "100%", width: "100%",borderRadius:"20px" }}
+alt="Card image cap" />
          
-  //        <div className="card-body" style={{fontSize:"12px"}}>
-  //        <h5 className="card-title">{props.object.name} </h5>
-  //        <p className="card-text"><b>Climate:</b> {props.object.climate}</p>
-  //        <p className="card-text"><b>Population:</b> {props.object.population}</p>
-  //        {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
-  //       <Link to={`/single/${props.id}`}>     
-  //          <button className="btn btn-primary"
-  //          style={{background:"#575957"}}>Information</button> 
-  //        </Link> 
+         <div className="card-body" style={{fontSize:"12px"}}>
+         <h5 className="card-title">{props.object.name} </h5>
+        <p className="card-text"><b>Climate:</b> {props.object.climate}</p>
+        <p className="card-text"><b>Population:</b> {props.object.population}</p>
+        <p className="card-text"><b>Gravity:</b> {props.object. gravity}</p>
+       
+       {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
+        <Link to={`/single/${props.id}`}>     
+          <button className="btn btn-primary"
+           style={{background:"#575957"}}>Information</button> 
+         </Link> 
          
-  //      </div>
-  //    </div> 
-  //    </div> 
-  //  )
+       </div>
+     </div> 
+   </div> 
+   ) 
  }
 }
 

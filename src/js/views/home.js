@@ -10,6 +10,13 @@ import { Context } from "../store/appContext";
 export const Home = () => {
 	const { store, actions } = useContext (Context);
 
+	// useEffect(()=> { fetch("https://www.swapi.tech/api/planets")
+	// .then(response => response.json()) // te trae un respuestas y la convierte en json
+	// 			 //setStore({propiedadDeStore:valor})
+	// .then(data => setStore({planets: data.result })
+		
+	// })
+
 	return (
 		<div className="container">
 			{/* //character */}
@@ -22,9 +29,10 @@ export const Home = () => {
 		  </div>
 		</div> 
 		
+	
 			{/* Planets */}
 
-			{/* <h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Planets</h1>
+			  <h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Planets</h1>
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  <div className="cards d-flex  ">
 			{store.planets.map((planets, index) => { //mapeamos a planets dentro de cards
@@ -32,7 +40,7 @@ export const Home = () => {
 			})}
 		  </div>
 		</div> 
-		 */}
+		  
 			
 	</div>
 	

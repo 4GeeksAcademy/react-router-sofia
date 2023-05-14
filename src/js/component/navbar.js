@@ -40,15 +40,15 @@ export const Navbar = () => {
                 <a className="dropdown-item text-light bg-darkp-2 " href="#">
                   {favorite}
                 </a>
-                {/* <span
+                <span
                   className="fa-solid fa-x"
                   onClick={() => {
                     actions.deleteFavorite(index);
                   }}
                 >
-                  <i class="bi bi-trash me-4 text-danger boton"></i>
+                  <i class="bi bi-trash me-4 text-danger boton">X</i>
                 </span>
-                 */}
+                 
               </li>
             );
           })}

@@ -5,7 +5,7 @@ const getState = ({ getStore,getActions, setStore }) => {
 
 			characters: [],
 			character:{},
-			//planets: [],
+			planets: [],
 			//vehicles: [],
 			favorites: []
 		},
@@ -22,14 +22,13 @@ const getState = ({ getStore,getActions, setStore }) => {
 			},
 
 			//PLANETAS
-			fetchPlanets: () => {
-					
-				fetch("https://www.swapi.tech/api/planets")
+			 fetchPlanets: () => {
+			 	fetch(`https://swapi.dev/api/planets`)
 					.then(response => response.json()) // te trae un respuestas y la convierte en json
-								 //setStore({propiedadDeStore:valor})
-					.then(data => setStore({planets: data.results })) // esa respuesta la voy a guardar en un espacio de memoria que se llame "data" que a su vez se convertira en un objeto.
+							 //setStore({propiedadDeStore:valor})
+			 		.then(data => setStore({planets: data.results })) // esa respuesta la voy a guardar en un espacio de memoria que se llame "data" que a su vez se convertira en un objeto.
 					.catch(err => console.log("request failed", err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
-			},
+			 },
           
 			//PERSONAJS DE MANERA INDIVIDUAL
 			fetchCharacter: (id) => {
@@ -51,16 +50,28 @@ const getState = ({ getStore,getActions, setStore }) => {
 			//AGREGAR A FAVORITOS
 			 								
 				addToFavorites:(name) =>{  //addToFavorites tomo un personaje como argumento(name) y su propiedad name
-				setStore({favorites:[...getStore().favorites,name]}) //se obtiene el estado actual con store,
+				const store=getStore()
+				if (!store.favorites.includes(name)) {
+					setStore({favorites:[...store.favorites,name]})
+					console.log("hola")
+				} else {
+					let filtered = store.favorites.filter(favorite => favorite != name)
+					setStore({favorites:filtered})
+				}
+
+				
+
+				
+				 //se obtiene el estado actual con store con los ateriores
 
 				//ELEMINAR DE FAVORITOS
-				deleteFavorite: (i) => {
-					const store = getStore();
-					const newList = store.favorites.filter((name, index) => index !== i);
-					setStore({ favorites: newList });
+			// 	deleteFavorite: (i) => {
+			// 		const store = getStore();
+			// 		const newList = store.favorites.filter((name, index) => index !== i);
+			// 		setStore({ favorites: newList });
 			
-			}	}
-
+			// }	
+				}
 		}
 	}
 };

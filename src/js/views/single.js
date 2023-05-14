@@ -14,6 +14,14 @@ export const Single = props => {
 		console.log(store)
 	},[])
 	
+// 	useEffect(()=>{
+// 		fetch("https://www.swapi.tech/api/people ")
+// 		.then(response => response.json())
+// 		.then(response => {response.result.description
+
+// 	})
+// },[])
+
 	return (
 <div className="jumbotron" style={{padding:"20px",display: "flex",justifyContent:"space-between"}}>
 
@@ -35,6 +43,8 @@ export const Single = props => {
 	<h4>Birthday: {store.character.birth_year}</h4>
 	<br/>
 	<h4>Hair color: {store.character.hair_color}</h4>
+	{/* <br/>
+	<h4>Hair color: {store.character.result.description}</h4> */}
 		</span>
 </div>
 
