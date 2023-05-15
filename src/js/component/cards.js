@@ -34,9 +34,7 @@ export const Cards = (props) => {
     case "personas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
       type = "characters";//de lo contrario seguira siendo una cadena vacia
 
-   return (  // characters
-
-    
+   return (  // CHARACTERS
    
       <div className="card" style={{ width: "18rem",borderRadius:"20px" }}>
        <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"} 
@@ -74,35 +72,42 @@ export const Cards = (props) => {
    )
    
   
-    //PLANETS CARDS
+    // PLANETS CARDS
       case "planetas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
          type = "planets"; //de lo contrario seguira siendo una cadena vacia
-       return(
-        <div className="card d-inline-block rounded" style={{ width: "14rem" }}>
+      return(
+                <div className="card d-inline-block rounded" style={{ width: "14rem" }}>
         <div className="face front">
         
-        <img src={"https://starwars-visualguide.com/assets/img/planets/2/" + props.id + ".jpg"} 
-
-className="card-img-top"
-style={{ height: "100%", width: "100%",borderRadius:"20px" }}
-alt="Card image cap" />
+        <img
+            src={
+              props.id == 1
+                ? "https://oakthorne.net/wiki/images/Tatooine.jpg"
+                : "https://starwars-visualguide.com/assets/img/planets/" +
+                  props.id +
+                  ".jpg"
+            }
+            className="card-img-top customMaxHeight"
+            alt="..."
+            style={{ heith: "100%", width: "100%" }}
+          />
          
-         <div className="card-body" style={{fontSize:"12px"}}>
+        <div className="card-body" style={{fontSize:"12px"}}>
          <h5 className="card-title">{props.object.name} </h5>
-        <p className="card-text"><b>Climate:</b> {props.object.climate}</p>
+     <p className="card-text"><b>Climate:</b> {props.object.climate}</p>
         <p className="card-text"><b>Population:</b> {props.object.population}</p>
         <p className="card-text"><b>Gravity:</b> {props.object. gravity}</p>
        
-       {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
-        <Link to={`/single/${props.id}`}>     
+        {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
+         <Link to={`/single/${props.id}`}>     
           <button className="btn btn-primary"
-           style={{background:"#575957"}}>Information</button> 
+            style={{background:"#575957"}}>Information</button> 
          </Link> 
          
-       </div>
-     </div> 
-   </div> 
-   ) 
+        </div>
+      </div> 
+    </div> 
+    ) 
  }
 }
 
