@@ -6,6 +6,7 @@ const getState = ({ getStore,getActions, setStore }) => {
 			characters: [],
 			character:{},
 			planets: [],
+			planet:{},
 			//vehicles: [],
 			favorites: []
 		},
@@ -29,6 +30,14 @@ const getState = ({ getStore,getActions, setStore }) => {
 							 //setStore({propiedadDeStore:valor})
 			 		.then(data => setStore({planets: data.results })) // esa respuesta la voy a guardar en un espacio de memoria que se llame "data" que a su vez se convertira en un objeto.
 					.catch(err => console.log("request failed", err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
+			 },
+
+			 fetchPlanet: (id) => {
+				fetch(`https://swapi.dev/api/planets/${id}`)
+				.then(response => response.json()) // te trae un respuestas y la convierte en json
+				.then(data =>setStore({planet: data})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
+																  //esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}]    
+				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 			 },
           
 			//PERSONAJS DE MANERA INDIVIDUAL

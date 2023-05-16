@@ -36,7 +36,7 @@ export const Cards = (props) => {
 
    return (  // CHARACTERS
    
-      <div className="card" style={{ width: "18rem",borderRadius:"20px" }}>
+      <div className="card" style={{ width: "17rem",height:"100%", borderRadius:"20px" }}>
        <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"} 
 
          className="card-img-top"
@@ -45,13 +45,9 @@ export const Cards = (props) => {
 
        <div className="card-body" style={{fontSize:"12px",fontFamily:"fantasy"}}>
          <h5 className="card-title">{props.object.name} </h5>
-         <p className="card-text"><b>Gender:</b> {props.object.gender}</p>
-         <p className="card-text"><b>Hair color:</b> {props.object.hair_color}</p>
-         <p className="card-text"><b>Eye color:</b> {props.object.eye_color}</p>
-         <p className="card-text"><b>Height</b> {props.object.height}</p>
          
          {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
-        <Link to={`/single/${props.id}`}>     
+        <Link to={`/single/planeta/${props.id}`}>     
            <button className="btn btn-primary"
            style={{background:"#575957"}}>Information</button> 
          </Link> 
@@ -76,11 +72,8 @@ export const Cards = (props) => {
       case "planetas"://en el caso de q el valor "type" sea igual a "personas" se asigna la cadena characters
          type = "planets"; //de lo contrario seguira siendo una cadena vacia
       return(
-                <div className="card d-inline-block rounded" style={{ width: "14rem" }}>
-        <div className="face front">
-        
-        <img
-            src={
+        <div className="card" style={{ width: "17rem",height:"100%", borderRadius:"20px" }}>
+        <img src={
               props.id == 1
                 ? "https://oakthorne.net/wiki/images/Tatooine.jpg"
                 : "https://starwars-visualguide.com/assets/img/planets/" +
@@ -88,8 +81,8 @@ export const Cards = (props) => {
                   ".jpg"
             }
             className="card-img-top customMaxHeight"
-            alt="..."
-            style={{ heith: "100%", width: "100%" }}
+            alt="Card image cap"
+            style={{ height: "100%", width: "100%",borderRadius:"20px" }}
           />
          
         <div className="card-body" style={{fontSize:"12px"}}>
@@ -106,7 +99,7 @@ export const Cards = (props) => {
          
         </div>
       </div> 
-    </div> 
+    
     ) 
  }
 }

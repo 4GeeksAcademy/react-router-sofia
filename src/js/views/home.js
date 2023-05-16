@@ -32,7 +32,7 @@ export const Home = () => {
 	
 			{/* Planets */}
 
-			  <h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Planets</h1>
+			  <h1 className="display-4 py-1 fw-bolder text-center" style={{color:"black",fontFamily:"fantasy"}}>Planets</h1>
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  <div className="cards d-flex  ">
 			{store.planets.map((planets, index) => { //mapeamos a planets dentro de cards

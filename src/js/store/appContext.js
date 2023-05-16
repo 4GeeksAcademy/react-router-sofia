@@ -24,7 +24,8 @@ const injectContext = PassedComponent => {
 		useEffect(() => {
 			state.actions.fetchCharacters()			 //Llamamos a la función "fetchCharacters" dentro del objeto "actions" del contexto de la aplicacion.
 			state.actions.fetchCharacter()
-			state.actions.fetchPlanets() //llamamos a la función "fetchPlanets" dentro del objeto "actions" del contexto de la aplicacion.
+		state.actions.fetchPlanets() //llamamos a la función "fetchPlanets" dentro del objeto "actions" del contexto de la aplicacion.
+		//state.actions.fetchPlanet()
 			//state.actions.fetchVehicles() //
 		}, []);
 			/**

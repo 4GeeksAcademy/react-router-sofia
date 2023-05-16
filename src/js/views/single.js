@@ -13,14 +13,12 @@ export const Single = props => {
 		actions.fetchCharacter(params.theid)
 		console.log(store)
 	},[])
+	useEffect ( ()=>{
+		actions.fetchPlanet(params.theid)
+		console.log(store)
+	},[])
 	
-// 	useEffect(()=>{
-// 		fetch("https://www.swapi.tech/api/people ")
-// 		.then(response => response.json())
-// 		.then(response => {response.result.description
 
-// 	})
-// },[])
 
 	return (
 <div className="jumbotron" style={{padding:"20px",display: "flex",justifyContent:"space-between"}}>
@@ -38,15 +36,19 @@ export const Single = props => {
 			</Link>
   </div>
 		 <span style={{color:"white"}}> 
-	<h2>Name: {store.character.name}</h2>
+	<h2><b>Name:</b> {store.character.name}</h2>
 	<br/>
-	<h4>Birthday: {store.character.birth_year}</h4>
+	<h4><b>Birthday:</b>{store.character.birth_year}</h4>
 	<br/>
-	<h4>Hair color: {store.character.hair_color}</h4>
-	{/* <br/>
-	<h4>Hair color: {store.character.result.description}</h4> */}
+	<h4><b>Hair color:</b>{store.character.hair_color}</h4>
+	<br/>
+	<h4><b>Height:</b>  {store.character.height}</h4>
+	<br/>
+	<h4><b>Eye color:</b>  {store.character.eye_color}</h4>
 		</span>
 </div>
+
+
 
 	);
 };
