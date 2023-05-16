@@ -1,6 +1,6 @@
 import React, { useEffect, useContext }from "react";
 import "../../styles/home.css";
-import  { Cards }  from "../component/cards";
+import  { Card }  from "../component/card";
 import { Context } from "../store/appContext";
 
 
@@ -10,12 +10,7 @@ import { Context } from "../store/appContext";
 export const Home = () => {
 	const { store, actions } = useContext (Context);
 
-	// useEffect(()=> { fetch("https://www.swapi.tech/api/planets")
-	// .then(response => response.json()) // te trae un respuestas y la convierte en json
-	// 			 //setStore({propiedadDeStore:valor})
-	// .then(data => setStore({planets: data.result })
-		
-	// })
+	
 
 	return (
 		<div className="container">
@@ -24,7 +19,7 @@ export const Home = () => {
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  <div className="cards d-flex  ">
 			{store.characters.map((people, index) => { //mapeamos a characters dentro de cards
-			  return (<div key={index} className="col-3"> <Cards object={people} type="personas" id={index + 1} url={`/single/${people.id}`}/></div>)
+			  return (<div key={index} className="col-3"> <Card object={people} type="characters" id={index + 1} url={`/single/${people.id}`}/></div>)
 			})}
 		  </div>
 		</div> 
@@ -36,7 +31,7 @@ export const Home = () => {
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  <div className="cards d-flex  ">
 			{store.planets.map((planets, index) => { //mapeamos a planets dentro de cards
-			  return (<div key={index} className="col-3"> <Cards object={planets} type="planetas" id={index + 1} url={`/single/${planets.id}`}/></div>)
+			  return (<div key={index} className="col-3"> <Card object={planets} type="planets" id={index + 1} url={`/single/${planets.id}`}/></div>)
 			})}
 		  </div>
 		</div> 

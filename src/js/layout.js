@@ -35,8 +35,7 @@ const Layout = () => {
 						<Route path="/" element={<Home />} />  
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
-						{/* <Route path="/single/planeta/:theid" element={<Single type="planetas" />} /> */}
-
+						<Route path="/single/:type/:theid" element={<Single />} /> {/*es lo mismo que estamos colocando en card.js*/} 
 						
 						  {/* aqui iria la ruta dinamica ya que  tiene un añadido que dice: oye aunque las paginas sean iguales, en cada una quiero
 																				 un tipo de datos diferentes. muy importante añadir los : para que react diga vale esto no es una palabra es una "caracteristica" */}
