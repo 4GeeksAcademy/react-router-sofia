@@ -1,5 +1,5 @@
 import React,{ useEffect,useState,useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams  } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
@@ -22,7 +22,7 @@ export const Navbar = () => {
           aria-expanded="false"
           data-bs-auto-close="outside"
         >
-          Mis favoritos
+          My Favorites
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {(store.favorites.length)}
     <span class="visually-hidden">unread messages</span>

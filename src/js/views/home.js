@@ -31,11 +31,21 @@ export const Home = () => {
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  <div className="cards d-flex  ">
 			{store.planets.map((planets, index) => { //mapeamos a planets dentro de cards
-			  return (<div key={index} className="col-3"> <Card object={planets} type="planets" id={index + 1} url={`/single/${planets.id}`}/></div>)
+			  return (<div key={index} className="col-3"> <Card object={planets} type="planets" id={index + 2} url={`/single/${planets.id}`}/></div>)
 			})}
 		  </div>
 		</div> 
 		  
+		  {/* vehicles */}
+
+		  <h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Vehicles</h1>
+		<div className="row d-flex flex-column wrapScroll mb-3  " >
+		  <div className="cards d-flex  " >
+			{store.vehicles.map((vehicles, index) => { //mapeamos a planets dentro de cards
+			  return (<div key={index} className="col-3"> <Card object={vehicles} type="vehicles" id={index + 4} url={`/single/${vehicles.id}`}/></div>)
+			})}
+		  </div>
+		</div> 
 			
 	</div>
 	

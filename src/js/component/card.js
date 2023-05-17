@@ -2,11 +2,10 @@ import React,{ useEffect,useState,useContext } from "react";
 import { BrowserRouter, Link, Route, Routes, useParams } from "react-router-dom";
 import "../../styles/demo.css";
 import { Context } from "../store/appContext"; 
-import { Single } from "../views/single";
-import { object } from "prop-types";
+//import { Single } from "../views/single";
+//import { object } from "prop-types";
 
 //este archivo es appContext. aqui tenemmos el useEffect de los fetch
-//import { object } from "prop-types";
 
 
 
@@ -16,9 +15,9 @@ export const Card = (props) => {
   const { name } = useParams();
   const { store, actions }= useContext(Context);
 
-  return (  // CHARACTERS-PLANETS-VEHICLES NOS SERVIRA PARA TODAS LAS URL
+  return (  // CHARACTERS-PLANETS-VEHICLES...ETC NOS SERVIRA PARA TODAS LAS VISTAS
    
-      <div className="card" style={{ width: "17rem",height:"100%", borderRadius:"20px" }}>
+      <div className="card" style={{ width: "300px",height:"100%", borderRadius:"20px" }}>
        <img src={`https://starwars-visualguide.com/assets/img/${props.type}/${props.id}.jpg`} 
 
          className="card-img-top"
@@ -47,10 +46,6 @@ export const Card = (props) => {
        </div>
      </div>
    )
-  
-
-  
-    
   };
 
   

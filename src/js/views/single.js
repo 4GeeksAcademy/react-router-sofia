@@ -27,9 +27,9 @@ export const Single = props => {
 				<>
 				<h2><b>Name:</b> {store.character.name}</h2>
 				<br/>
-				<h4><b>Birthday:</b>{store.character.birth_year}</h4>
+				<h4><b>Birthday:</b> {store.character.birth_year}</h4>
 				<br/>
-				<h4><b>Hair color:</b>{store.character.hair_color}</h4>
+				<h4><b>Hair color:</b> {store.character.hair_color}</h4>
 				<br/>
 				<h4><b>Height:</b>  {store.character.height}</h4>
 				<br/>
@@ -41,12 +41,30 @@ export const Single = props => {
 		else if ( params.type==="planets"){
 			return (
 				<> 
-				<h2><b>Name:</b> {store.planet.name}</h2>
+				<h2><b>Name: </b> {store.planet.name}</h2>
 				<br/>
-				<h4><b>Climate:</b>{store.planet.climate}</h4>
+				<h4><b>Climate: </b>{store.planet.climate}</h4>
+				<br/>
+				<h4><b>Diameter: </b>{store.planet.diameter}</h4>
+				<br/>
+				<h4><b>Terrain: </b>{store.planet.terrain}</h4>
+				<br/>
+				<h4><b>Population: </b>{store.planet.population}</h4>
+				<br/>
+				<h4><b>Gravity: </b>{store.planet.gravity}</h4>
+
 				</>
 			)
 		}
+		else if ( params.type==="vehicles"){
+			return (
+				<> 
+				<h2><b>Name:</b> {store.vehicle.name}</h2>
+				
+				</>
+			)
+		}
+		
 
 	}
 

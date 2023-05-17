@@ -7,7 +7,8 @@ const getState = ({ getStore,getActions, setStore }) => {
 			character:{},
 			planets: [],
 			planet:{},
-			//vehicles: [],
+			vehicles: [],
+			vehicle:{},
 			favorites: []
 		},
 		actions: {
@@ -18,6 +19,15 @@ const getState = ({ getStore,getActions, setStore }) => {
 				
 				.then(response => response.json()) // te trae un respuestas y la convierte en json
 				.then(data => setStore({characters: data.results})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
+																  //esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}]    
+				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
+
+			},
+			//PERSONAJS DE MANERA INDIVIDUAL
+			fetchCharacter: (id) => {
+				fetch(`https://swapi.dev/api/people/${id}`)
+				.then(response => response.json()) // te trae un respuestas y la convierte en json
+				.then(data =>setStore({character: data})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
 																  //esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}]    
 				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 
@@ -40,20 +50,20 @@ const getState = ({ getStore,getActions, setStore }) => {
 				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 			 },
           
-			//PERSONAJS DE MANERA INDIVIDUAL
-			fetchCharacter: (id) => {
-				fetch(`https://swapi.dev/api/people/${id}`)
-				.then(response => response.json()) // te trae un respuestas y la convierte en json
-				.then(data =>setStore({character: data})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
-																  //esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}]    
-				.catch(err => console.log()("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
-
-			},
+			
 			//VEHICULOS
 			fetchVehicles:() => {
 				fetch("https://www.swapi.tech/api/vehicles")
 				.then(response => response.json())  // te trae un respuestas y la convierte en json
 				.then(data => setStore({vehicles:data.results})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
+																//esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}] 
+				.catch(err => console.log("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
+			},
+			//vehicles INDIVIDUAL
+			fetchVehicle:() => {
+				fetch(`https://www.swapi.tech/api/vehicles/${id}`)
+				.then(response => response.json())  // te trae un respuestas y la convierte en json
+				.then(data => setStore({vehicle:data.results})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
 																//esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}] 
 				.catch(err => console.log("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 			},
@@ -75,12 +85,13 @@ const getState = ({ getStore,getActions, setStore }) => {
 				 //se obtiene el estado actual con store con los ateriores
 
 				//ELEMINAR DE FAVORITOS
-			// 	deleteFavorite: (i) => {
-			// 		const store = getStore();
-			// 		const newList = store.favorites.filter((name, index) => index !== i);
-			// 		setStore({ favorites: newList });
+				
+				deleteFavorite: (i) => {
+					const store = getStore();
+					const newList = store.favorites.filter((name, index) => index !== i);
+					setStore({ favorites: newList });
 			
-			// }	
+			}	
 				}
 		}
 	}
