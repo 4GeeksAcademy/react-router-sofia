@@ -61,7 +61,7 @@ const getState = ({ getStore,getActions, setStore }) => {
 			},
 			//vehicles INDIVIDUAL
 			fetchVehicle: (id) => {
-  fetch(`https://www.swapi.tech/api/vehicles/${id}`)
+  fetch(`https://swapi.dev/api/vehicles/${id}`)
     .then(response => response.json())
     .then(data => setStore({ vehicle: data.result.properties }))
     .catch(err => console.log("Request failed", err));

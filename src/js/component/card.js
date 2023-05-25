@@ -27,7 +27,7 @@ export const Card = (props) => {
        <div className="card-body" style={{fontSize:"12px",fontFamily:"fantasy"}}>
          <h5 className="card-title">{props.object.name} </h5>
          
-         {/* aqui tendriamos que colocar el link con la infomacion de cada personaje.*/}
+ {/* link con la infomacion de cada personaje.*/}
         <Link className="btn btn-primary"  style={{background:"#575957"}} to={`/single/${props.type}/${props.id}`}>     
           Information
          </Link> 

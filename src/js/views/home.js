@@ -13,8 +13,8 @@ export const Home = () => {
 	
 
 	return (
-		<div className="container">
-			{/* //character */}
+		<div className="container"> 
+			{/* //characters */}
 		<h1 className="display-4 py-1 fw-bolder text-center" style={{color:"#51c322",fontFamily:"fantasy"}}>Characters</h1>
 		<div className="row d-flex flex-column wrapScroll mb-3  ">
 		  <div className="cards d-flex  ">
