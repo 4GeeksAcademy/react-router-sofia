@@ -35,7 +35,7 @@ export const Navbar = () => {
         >
           {store.favorites.map((favorite, index) => {
             return (
-              <li className="d-flex navegacion">
+              <li className="d-flex navegacion" key={index} >
                 
                 <a className="dropdown-item text-light bg-darkp-2 " href="#">
                   {favorite}

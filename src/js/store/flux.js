@@ -60,39 +60,34 @@ const getState = ({ getStore,getActions, setStore }) => {
 				.catch(err => console.log("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
 			},
 			//vehicles INDIVIDUAL
-			fetchVehicle:() => {
-				fetch(`https://www.swapi.tech/api/vehicles/${id}`)
-				.then(response => response.json())  // te trae un respuestas y la convierte en json
-				.then(data => setStore({vehicle:data.results})) //la guaradara en u espacio de memoria llamado data. data.results en este caso es un array de elementos
-																//esos elementos son los que nos proporciona la url de swapi(result=[{"uid","name","url"}] 
-				.catch(err => console.log("request failed",err)); // si sale algo mal en alguno de los dos primeros pasos, aqui te mostraria el error.
-			},
+			fetchVehicle: (id) => {
+  fetch(`https://www.swapi.tech/api/vehicles/${id}`)
+    .then(response => response.json())
+    .then(data => setStore({ vehicle: data.result.properties }))
+    .catch(err => console.log("Request failed", err));
+},
 			//AGREGAR A FAVORITOS
 			 								
 				addToFavorites:(name) =>{  //addToFavorites tomo un personaje como argumento(name) y su propiedad name
 				const store=getStore()
 				if (!store.favorites.includes(name)) {
 					setStore({favorites:[...store.favorites,name]})
-					console.log("hola")
+				
 				} else {
 					let filtered = store.favorites.filter(favorite => favorite != name)
 					setStore({favorites:filtered})
 				}
-
-				
-
-				
 				 //se obtiene el estado actual con store con los ateriores
-
-				//ELEMINAR DE FAVORITOS
+				},
 				
+				//ELEMINAR DE FAVORITOS
+
 				deleteFavorite: (i) => {
 					const store = getStore();
 					const newList = store.favorites.filter((name, index) => index !== i);
 					setStore({ favorites: newList });
-			
-			}	
 				}
+				
 		}
 	}
 };
